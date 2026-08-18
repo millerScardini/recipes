@@ -1,0 +1,18 @@
+<section class="recipe">
+
+    @if(recipe(); as recipe) {
+
+        <!-- Img da receita -->
+        <div>
+            <img [src]="recipe.imagePath" [alt]="recipe.name">
+        </div>
+
+        <!-- Categorias, Nome e Descricao -->
+        <div>
+            <small>{{ recipe.categoryIds | categoryName: categories() }}</small>
+            <h3>{{ recipe.name }}</h3>
+            <p>{{ recipe.description }}</p>
+        </div>
+    }
+
+</section>
