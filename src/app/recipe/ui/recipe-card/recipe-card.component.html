@@ -10,7 +10,7 @@
         <!-- Categorias, Nome e Descricao -->
         <div>
             <small>{{ recipe.categoryIds | categoryName: categories() }}</small>
-            <h3>{{ recipe.name }}</h3>
+            <h3 appNewRecipeBadge [new]="recipe.new">{{ recipe.name }}</h3>
             <p>{{ recipe.description }}</p>
         </div>
     }
