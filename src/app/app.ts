@@ -1,20 +1,13 @@
-import { Component, signal } from '@angular/core';
-import { Header } from "./shared/ui/header/header";
-import { RecipeService } from './recipe/data/recipe.service';
-import { RecipesComponent } from './recipe/feature/recipes/recipes.component';
+import { Component } from '@angular/core';
+import { HeaderComponent } from "./shared/ui/header/header.component";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, RecipesComponent],
+  imports: [HeaderComponent, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   protected readonly title = 'My Recipe Book';
-
-  constructor(private recipeService: RecipeService) {
-    this.recipeService.get().subscribe((data) => {
-      console.log(data)
-    })
-  }
 }

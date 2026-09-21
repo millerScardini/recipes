@@ -14,4 +14,8 @@ export class RecipeService {
         return this.httpClient.get<Recipe[]>(`${this.apiBaseUrl}/api/v1/recipes`);
     }
 
+    public getById(id: string): Observable<Recipe> {
+        return this.httpClient.get<Recipe>(`${this.apiBaseUrl}/api/v1/recipes/${id}`);
+    }
+
 }
